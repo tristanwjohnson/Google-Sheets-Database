@@ -13,7 +13,7 @@ FUNCTIONS
  * @param {object} parameters: list of input parameters to be passed into the function
  * @return {object} returns the output of the function that is called
  */
-function accessDatabase(functionName, spreadsheetID, sheetName, parameters) {...} 
+>function accessDatabase(functionName, spreadsheetID, sheetName, parameters) {...} 
 
 
 /**
@@ -33,8 +33,8 @@ function create_(sheet, inputData) {...}
  * @param {string} columnName: the name of the column that we are comparing values in for reading
  * @param {object} rowValues: a list of the values of the rows for the given columnName that we wish to read
  * @return {object} return a dictionary of dictionaries {ID: {fieldName: data}} corresponding to the inputted rowIDs
- *                  - if a rowID does not exist or is invalid, then the corresponding entry will be null
- *                  - if the rowIDs input is null itself, this function returns a dictionary corresponding to ALL rows in the sheet
+ *                  if a rowID does not exist or is invalid, then the corresponding entry will be null
+ *                  if the rowIDs input is null itself, this function returns a dictionary corresponding to ALL rows in the sheet
  */
 function read_(sheet, columnName, rowValues) {...}
 - called accessDatabase("READ", spreadsheetID, sheetName, [columnName, rowValues])
