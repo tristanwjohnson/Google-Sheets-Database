@@ -11,17 +11,18 @@ FUNCTIONS
 
 > function accessDatabase(functionName, spreadsheetID, sheetName, parameters) {...}
 
-This is the wrapper function called from the other files that manages resource locking and calls the helper functions to perform the actual CRUD operations.
+This is the wrapper function called from the other files that manages resource locking and calls the helper functions to perform the actual CRUD operations. functionName can be "CREATE", "READ", "UPDATE", "DELETE", "UNDO_DELETE". See below for more info
 
 
-Function to create new rows in the given sheet using inputData
+
 - @param {string} sheet: the instance of the sheet we wish to write to
 - @param {object} inputData: a list of dictionaries {fieldName: data} representing the data we wish to create new rows with
 - @return {object} returns a dictionary of dictionaries {ID: {fieldName: data}} corresponding to the inputted rowIDs
 
 >function create_(sheet, inputData) {...}
 
-Function to create new rows in the given sheet using inputData, called accessDatabase("CREATE", spreadsheetID, sheetName, [inputData])
+Function to create new rows in the given sheet using inputData
+(e.g. accessDatabase("CREATE", spreadsheetID, sheetName, [inputData]))
 
 
  - @param {string} sheet: the instance of the sheet we wish to read from
@@ -32,7 +33,8 @@ Function to create new rows in the given sheet using inputData, called accessDat
                    If the rowIDs input is null itself, this function returns a dictionary corresponding to ALL rows in the sheet.
 >function read_(sheet, columnName, rowValues) {...}
 
-Function to return the rows specified by the given rowIDs, called accessDatabase("READ", spreadsheetID, sheetName, [columnName, rowValues])
+Function to return the rows specified by the given rowIDs
+(e.g. accessDatabase("READ", spreadsheetID, sheetName, [columnName, rowValues]))
 
 
  - @param {string} sheet: the instance of the sheet we wish to update
@@ -41,7 +43,8 @@ Function to return the rows specified by the given rowIDs, called accessDatabase
 
 >function update_(sheet, inputDict) {...}
 
-Function to 'Update' (delete and then create) the row with the oldRowID as its ID, called accessDatabase("UPDATE", spreadsheetID, sheetName, [inputData]).
+Function to 'Update' (delete and then create) the row with the oldRowID as its ID
+(e.g. accessDatabase("UPDATE", spreadsheetID, sheetName, [inputData]))
 
 
  - @param {string} sheet: the instance of the sheet we wish to delete from
@@ -51,7 +54,7 @@ Function to 'Update' (delete and then create) the row with the oldRowID as its I
 
 >function delete_(sheet, columnName, rowValues) {...}
 
-Function to 'delete' (set valid=FALSE) all rows with the value of the given columnName equal to rowValue, called accessDatabase("DELETE", spreadsheetID, sheetName, [columnName, rowValues])
+Function to 'delete' (set valid=FALSE) all rows with the value of the given columnName equal to rowValue(e.g. accessDatabase("DELETE", spreadsheetID, sheetName, [columnName, rowValues]))
 
 
  - @param {object} sheet: the sheet that this operation is taking place on
@@ -61,7 +64,7 @@ Function to 'delete' (set valid=FALSE) all rows with the value of the given colu
 
 >function undoDelete_(sheet, columnName, rowValues) {...}
 
-Function to undo a delete operation (does not handle foreign keys), called accessDatabase("UNDO_DELETE", spreadsheetID, sheetName, [columnName, rowValues])
+Function to undo a delete operation (does not handle foreign keys) (e.g. accessDatabase("UNDO_DELETE", spreadsheetID, sheetName, [columnName, rowValues]))
 
 
  - return {integer} the number of rows deleted 
