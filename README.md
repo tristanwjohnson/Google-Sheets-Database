@@ -23,7 +23,7 @@ FUNCTIONS
  * @param {object} inputData: a list of dictionaries {fieldName: data} representing the data we wish to create new rows with
  * @return {object} returns a dictionary of dictionaries {ID: {fieldName: data}} corresponding to the inputted rowIDs
  */
-function create_(sheet, inputData) {...}
+>function create_(sheet, inputData) {...}
 - called accessDatabase("CREATE", spreadsheetID, sheetName, [inputData])
 
 /**
@@ -36,7 +36,7 @@ function create_(sheet, inputData) {...}
  *                  if a rowID does not exist or is invalid, then the corresponding entry will be null
  *                  if the rowIDs input is null itself, this function returns a dictionary corresponding to ALL rows in the sheet
  */
-function read_(sheet, columnName, rowValues) {...}
+>function read_(sheet, columnName, rowValues) {...}
 - called accessDatabase("READ", spreadsheetID, sheetName, [columnName, rowValues])
 
 /**
@@ -46,7 +46,7 @@ function read_(sheet, columnName, rowValues) {...}
  * @param {object} inputDict: a dictionary {fieldName: data} representing the data we wish to create a new row with - to be passed into create_
  * @return {object} returns the output of create_ - dictionary of dictionaries {ID: {fieldName: data}} corresponding to the inputted oldRowID
  */
-function update_(sheet, inputDict) {...}
+>function update_(sheet, inputDict) {...}
 - called accessDatabase("UPDATE", spreadsheetID, sheetName, [inputData])
 
 /**
@@ -58,7 +58,7 @@ function update_(sheet, inputDict) {...}
  * @return {object} returns a dictionary of dictionaries {ID: {fieldName: data}} representing the deleted rows by their IDs
  *                  - returns null if inputs are invalid - bad column name, null rowValues or empty list, sheet missing a valid column 
  */
-function delete_(sheet, columnName, rowValues) {...}
+>function delete_(sheet, columnName, rowValues) {...}
 - called accessDatabase("DELETE", spreadsheetID, sheetName, [columnName, rowValues])
 
 /**
@@ -69,7 +69,7 @@ function delete_(sheet, columnName, rowValues) {...}
  * @param {string} {object} rowValues: the values that we use to compare for undoing deletion
  * @return {object} returns a list of dictionaries of the rows that were just undeleted
  */
-function undoDelete_(sheet, columnName, rowValues) {...}
+>function undoDelete_(sheet, columnName, rowValues) {...}
 - called accessDatabase("UNDO_DELETE", spreadsheetID, sheetName, [columnName, rowValues])
 
 /**
@@ -77,4 +77,4 @@ function undoDelete_(sheet, columnName, rowValues) {...}
  * 
  * return {integer} the number of rows deleted 
  */
-function cleanDatabase() {...}
+>function cleanDatabase() {...}
