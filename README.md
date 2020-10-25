@@ -3,16 +3,13 @@ Code to convert a set of Google spread sheets and sheets into a working database
 
 FUNCTIONS
 
-/**
- * This is the wrapper function called from the other files that manages resource locking and calls the
- * helper functions to perform the actual CRUD operations.
- *
- * @param {string} functionName: the name of the function that we wish to call (uses string matching to identify)
- * @param {string} spreadsheetID: the id of the spreadsheet we wish to access
- * @param {string} sheetName: the name of the sheet we wish to access
- * @param {object} parameters: list of input parameters to be passed into the function
- * @return {object} returns the output of the function that is called
- */
+This is the wrapper function called from the other files that manages resource locking and calls the helper functions to perform the actual CRUD operations.
+
+@param {string} functionName: the name of the function that we wish to call (uses string matching to identify)
+@param {string} spreadsheetID: the id of the spreadsheet we wish to access
+@param {string} sheetName: the name of the sheet we wish to access
+@param {object} parameters: list of input parameters to be passed into the function
+@return {object} returns the output of the function that is called
 >function accessDatabase(functionName, spreadsheetID, sheetName, parameters) {...} 
 
 
