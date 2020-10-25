@@ -24,7 +24,7 @@ FUNCTIONS
  * @return {object} returns a dictionary of dictionaries {ID: {fieldName: data}} corresponding to the inputted rowIDs
  */
 >function create_(sheet, inputData) {...}
-- called accessDatabase("CREATE", spreadsheetID, sheetName, [inputData])
+>- called accessDatabase("CREATE", spreadsheetID, sheetName, [inputData])
 
 /**
  * Function to return the rows specified by the given rowIDs
@@ -37,7 +37,7 @@ FUNCTIONS
  *                  if the rowIDs input is null itself, this function returns a dictionary corresponding to ALL rows in the sheet
  */
 >function read_(sheet, columnName, rowValues) {...}
-- called accessDatabase("READ", spreadsheetID, sheetName, [columnName, rowValues])
+>- called accessDatabase("READ", spreadsheetID, sheetName, [columnName, rowValues])
 
 /**
  * Function to 'Update' (delete and then create) the row with the oldRowID as its ID
@@ -47,7 +47,7 @@ FUNCTIONS
  * @return {object} returns the output of create_ - dictionary of dictionaries {ID: {fieldName: data}} corresponding to the inputted oldRowID
  */
 >function update_(sheet, inputDict) {...}
-- called accessDatabase("UPDATE", spreadsheetID, sheetName, [inputData])
+>- called accessDatabase("UPDATE", spreadsheetID, sheetName, [inputData])
 
 /**
  * Function to 'delete' (set valid=FALSE) all rows with the value of the given columnName equal to rowValue
@@ -56,10 +56,10 @@ FUNCTIONS
  * @param {string} columnName: the name of the column that we are comparing values in for deletion
  * @param {object} rowValues: the values that we use to compare for deletion
  * @return {object} returns a dictionary of dictionaries {ID: {fieldName: data}} representing the deleted rows by their IDs
- *                  - returns null if inputs are invalid - bad column name, null rowValues or empty list, sheet missing a valid column 
+ *                  returns null if inputs are invalid - bad column name, null rowValues or empty list, sheet missing a valid column 
  */
 >function delete_(sheet, columnName, rowValues) {...}
-- called accessDatabase("DELETE", spreadsheetID, sheetName, [columnName, rowValues])
+>- called accessDatabase("DELETE", spreadsheetID, sheetName, [columnName, rowValues])
 
 /**
  * Function to undo a delete operation (does not handle foreign keys)
@@ -70,7 +70,7 @@ FUNCTIONS
  * @return {object} returns a list of dictionaries of the rows that were just undeleted
  */
 >function undoDelete_(sheet, columnName, rowValues) {...}
-- called accessDatabase("UNDO_DELETE", spreadsheetID, sheetName, [columnName, rowValues])
+>- called accessDatabase("UNDO_DELETE", spreadsheetID, sheetName, [columnName, rowValues])
 
 /**
  * Function to remove every false row in the database that is atleast a day old
